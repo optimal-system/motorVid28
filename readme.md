@@ -1,7 +1,3 @@
-Hi members of the clock-club.
-I'm contacting you because after searching on Internet you are the best for this kind of project.
-Thanks for all the examples you provide, really good stuff.
-
 I'm trying to control a VID28 step motor connected directly to a Raspberry Pico with a microPython program.
 The 2 axes are connected to needles. The needles contains a small magnet for callibration with a reed switch.
 The code is in my repository 'motorvid28.py'
