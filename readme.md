@@ -10,7 +10,7 @@ I could add a chip (vid66 or equivalent) to have a separate power suply for the 
 To move the motors there is several levels , top / Dow :
 1 : The class motorVid28() with instances for two needles (BN end SN). To initiate the class :
 1.1 : Definition of the pins used by the motor. Note that pins B and C are connected
-1.2 : The SEQUENCE of pulses sent to the pins according to the datasheet of Vid28
+1.2 : The SEQUENCE of pulses sent to the pins according to the datasheet (see Vid28.pdf)
 1.3 : The timing TIMEPULSE and TIMESTEP. There is also TIMESTOP but not important
 1.4 : The number od steps corresponding to 360°. Only 180 steps for direct control. 720 with a driver like VID66 (not used)
 1.5 : Pin used by the reed switches for calibration
