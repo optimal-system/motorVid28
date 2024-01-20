@@ -9,7 +9,7 @@ and 2 needles : Small needle on outside shaft (for background)
                 Big needle on inside shaft (for foreground)
 Calibration with 2 Magnetic Switch (normally Open)
 """
-__version__ = 1.240111
+__version__ = 1.240120
 
 import time
 from machine import Pin
@@ -22,10 +22,10 @@ class motorVid28():
         self._BC       = Pin(pins[1],Pin.OUT,0)
         self._D        = Pin(pins[2],Pin.OUT,0)
         self.SWITCH    = Pin(pins[3],Pin.IN,Pin.PULL_UP)
-        self.TIMESTEP = 20   #in millisexonds
-        self.TIMEPULSE    = 2    #in ms
-        self.TIMESTOP  = 1    #in sec
-        self.STEPS     = 180
+        self.TIMEPULSE = 7    #in milliseconds
+        self.TIMESTEP  = 2    #in milliseconds
+        self.TIMESTOP  = 1    #in seconds
+        self.STEPS     = 180  #only 180 for direct drive by Pico
         self.SEQUENCE = [
                 [1, 0, 1],
                 [0, 0, 1],
