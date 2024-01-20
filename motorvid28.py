@@ -22,8 +22,8 @@ class motorVid28():
         self._BC       = Pin(pins[1],Pin.OUT,0)
         self._D        = Pin(pins[2],Pin.OUT,0)
         self.SWITCH    = Pin(pins[3],Pin.IN,Pin.PULL_UP)
-        self.TIMESLEEP = 20   #in millisexonds
-        self.TIMEPW    = 2    #in ms
+        self.TIMESTEP = 20   #in millisexonds
+        self.TIMEPULSE    = 2    #in ms
         self.TIMESTOP  = 1    #in sec
         self.STEPS     = 180
         self.SEQUENCE = [
@@ -40,7 +40,7 @@ class motorVid28():
         self._A.value (data[0])
         self._BC.value(data[1])
         self._D.value (data[2])
-        time.sleep_ms(self.TIMESLEEP)        
+        time.sleep_ms(self.TIMEPULSE)        
             
     def moveOneStep(self,direction):
         for i in range(6):
@@ -52,7 +52,7 @@ class motorVid28():
     def moveSteps(self, direction, steps):
         for i in range(steps):
             self.moveOneStep(direction)
-            time.sleep_ms(self.TIMEPW)
+            time.sleep_ms(self.TIMESTEP)
         
     def calibrateNeedle(self,direction,adjust,name="") :
         self.moveSteps(direction, self.STEPS/4) # move out of reed magnet zone
