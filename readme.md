@@ -20,14 +20,4 @@ To move the motors there is several levels , top / Dow :
 4 : The method _motorcontrol() sending the pulses to the motor
 5 : The method calibrateNeedle() to move steps until the reed switch sense the magnet of the needle
 
-The critical part is the timing. Very different results occurs by slightly changing  TIMEPULSE and TIMESTEP
-    TIMEPULSE = 1ms TIMESTEP = 1ms : Very fast moves but not reliable
-    TIMEPULSE = 5ms TIMESTEP = 1ms : Fast but missing steps once in a while
-    TIMEPULSE = 1ms TIMESTEP = 5ms : Very fast but not reliable at all
-    TIMEPULSE = 5ms TIMESTEP = 5ms : Fair speed but still missing steps
-    TIMEPULSE = 10ms TIMESTEP = 1ms : Fair speed but missing many steps
-    TIMEPULSE = 10ms TIMESTEP = 5ms : Slow but missing many steps
-    TIMEPULSE = 15ms TIMESTEP = 5ms : Very slow and painfull !
-    TIMEPULSE = 7ms TIMESTEP = 2ms : So far the best
-
-The inner shaft (BN) is giving mor problems than the outer shaft (SN).    
+I solved the problem. I had pin 2 and 3 of the Vid28 connected because they receive the same info. They are identical from the code point of view but not from the electric perspective. The voltage is correct but the amperage is divided by 2 ! Thus half the watts and far less torque... 
