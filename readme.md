@@ -3,7 +3,7 @@ The 2 axes are connected to needles. The needles contains a small magnet for cal
 The code is in my repository 'motorvid28.py' and can be tested with 'motorvid28-test.py'
 The schematic is Pico-vid28.pdf and the datasheet in Vid28.pdf  
 
-To move the motors there is several levels , top / Dow :  
+To move the motors there is several levels , top / down :  
 1 : The class motorVid28() with instances for two needles (BN end SN). To initiate the class :  
 1.1 : Definition of the pins used by the motor. Note that pins B and C receive same data BUT must be connected to 2 pins (for power).  
 1.2 : The SEQUENCE of pulses sent to the pins according to the datasheet  
